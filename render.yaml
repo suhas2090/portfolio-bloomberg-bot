@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: portfolio-bloomberg-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false          # You will paste this manually in Render dashboard
+      - key: GEMINI_API_KEY
+        sync: false          # You will paste this manually in Render dashboard
+      - key: ALLOWED_CHAT_ID
+        sync: false          # Your Telegram chat ID — security lock
+      - key: RENDER_URL
+        sync: false          # Your Render app URL e.g. https://portfolio-bloomberg-bot.onrender.com
+    healthCheckPath: /ping
+    autoDeploy: true
