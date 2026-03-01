@@ -59,7 +59,7 @@ PORTFOLIO = {
     "GENUSPOWER": {
         "name": "Genus Power Infrastructure",
         "exchange": "NSE", "bse_code": "514992",
-        "qty": 100, "avg_price": 350.0,
+        "qty": 62, "avg_price": 321.94,
         "industry": "Smart Metering / Electrical Equipment",
         "peers": ["HPL Electric", "Honeywell Automation"],
         "key_suppliers": ["STMicroelectronics", "Renesas", "PCB manufacturers"],
@@ -68,7 +68,7 @@ PORTFOLIO = {
     "ACE": {
         "name": "Action Construction Equipment",
         "exchange": "NSE", "bse_code": "532762",
-        "qty": 50, "avg_price": 900.0,
+        "qty": 12, "avg_price": 1173.28,
         "industry": "Construction & Material Handling Equipment",
         "peers": ["BEML", "Escorts Kubota", "Jupiter Wagons"],
         "key_suppliers": ["Cummins India", "TAFE Perkins", "Steel suppliers"],
@@ -77,7 +77,7 @@ PORTFOLIO = {
     "IREDA": {
         "name": "IREDA",
         "exchange": "NSE", "bse_code": "544097",
-        "qty": 200, "avg_price": 180.0,
+        "qty": 88, "avg_price": 194.06,
         "industry": "Renewable Energy NBFC",
         "peers": ["PFC", "RECLTD", "HUDCO"],
         "key_suppliers": ["N/A - Financial Institution"],
@@ -86,7 +86,7 @@ PORTFOLIO = {
     "JIOFIN": {
         "name": "Jio Financial Services",
         "exchange": "NSE", "bse_code": "543865",
-        "qty": 75, "avg_price": 250.0,
+        "qty": 35, "avg_price": 316.7,
         "industry": "NBFC / Financial Services",
         "peers": ["Bajaj Finance", "Shriram Finance", "Muthoot Finance"],
         "key_suppliers": ["Reliance / Jio tech stack"],
@@ -95,7 +95,7 @@ PORTFOLIO = {
     "WEBELSOLAR": {
         "name": "Websol Energy System",
         "exchange": "NSE", "bse_code": "517498",
-        "qty": 150, "avg_price": 700.0,
+        "qty": 135, "avg_price": 134.02,
         "industry": "Solar PV Manufacturing",
         "peers": ["Waaree Energies", "Premier Energies", "Borosil Renewables"],
         "key_suppliers": ["LONGi Solar", "Daqo (polysilicon)", "Silver paste suppliers"],
@@ -104,7 +104,7 @@ PORTFOLIO = {
     "BAJEL": {
         "name": "Bajel Projects",
         "exchange": "NSE", "bse_code": "544076",
-        "qty": 100, "avg_price": 400.0,
+        "qty": 57, "avg_price": 248.76,
         "industry": "Power T&D EPC",
         "peers": ["KEC International", "Kalpataru Projects", "Techno Electric"],
         "key_suppliers": ["Steel suppliers", "Copper wire", "Transformer manufacturers"],
