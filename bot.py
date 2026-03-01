@@ -124,7 +124,7 @@ SUPPLY_CHAIN_WATCHLIST = [
 # ══════════════════════════════════════════════════════════
 
 genai.configure(api_key=GEMINI_API_KEY)
-gemini = genai.GenerativeModel("gemini-2.0-flash")
+gemini = genai.GenerativeModel("gemini-1.5-flash-latest")
 
 # Per-user conversation memory (session-based)
 _chat_sessions = {}
