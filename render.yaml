@@ -2,16 +2,31 @@ services:
   - type: web
     name: portfolio-bloomberg-bot
     runtime: python
-    buildCommand: pip install -r requirements.txt
+    pythonVersion: "3.11.9"
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: python bot.py
     envVars:
       - key: TELEGRAM_TOKEN
-        sync: false          # You will paste this manually in Render dashboard
+        sync: false
       - key: GEMINI_API_KEY
-        sync: false          # You will paste this manually in Render dashboard
+        sync: false
       - key: ALLOWED_CHAT_ID
-        sync: false          # Your Telegram chat ID — security lock
+        sync: false
       - key: RENDER_URL
-        sync: false          # Your Render app URL e.g. https://portfolio-bloomberg-bot.onrender.com
+        sync: false
     healthCheckPath: /ping
     autoDeploy: true
+```
+→ Commit changes
+
+**2 — Replace `requirements.txt`** (removes the pandas problem entirely)
+- Click `requirements.txt` → pencil ✏️ → delete all → paste:
+```
+python-telegram-bot==13.15
+google-generativeai==0.5.4
+yfinance==0.2.36
+feedparser==6.0.11
+requests==2.31.0
+beautifulsoup4==4.12.3
+lxml==4.9.4
+flask==3.0.3
