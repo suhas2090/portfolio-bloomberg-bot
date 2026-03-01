@@ -29,7 +29,7 @@ import threading
 import requests
 import feedparser
 import yfinance as yf
-import google.generativeai as genai
+import httpx
 from telegram import Update, ParseMode
 from telegram.ext import (
     Updater, CommandHandler, MessageHandler,
@@ -123,17 +123,27 @@ SUPPLY_CHAIN_WATCHLIST = [
 # AI + HELPERS
 # ══════════════════════════════════════════════════════════
 
-genai.configure(api_key=GEMINI_API_KEY)
-gemini = genai.GenerativeModel("gemini-1.5-flash-latest")
-
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 # Per-user conversation memory (session-based)
 _chat_sessions = {}
 
 def ask_gemini(prompt: str, retries=3) -> str:
     for i in range(retries):
         try:
-            r = gemini.generate_content(prompt)
-            return r.text
+            response = httpx.post(
+                "https://openrouter.ai/api/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "model": "meta-llama/llama-3.1-8b-instruct:free",
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 1024
+                },
+                timeout=30
+            )
+            return response.json()["choices"][0]["message"]["content"]
         except Exception as e:
             if i < retries - 1:
                 time.sleep(2)
